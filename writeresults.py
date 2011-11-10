@@ -2,6 +2,6 @@
 
 import io
 
-def writeresults(test,trial,primes):
-	f = open(test+"_trial" + str(trial) + ".accuracy",'w')
+def writeresults(test,maxnum,primes):
+	f = open(test+"_trial" + str(maxnum) + ".accuracy",'w')
 	f.write(str(primes)+"\n")
