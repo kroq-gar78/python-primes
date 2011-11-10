@@ -3,15 +3,21 @@
 import random
 import sys
 
-def isPrime(n,k):
-#def isPrime(n):
-	bases = [2,3]
-	for a in bases:
-		#print "Iteration " + str(i+1)
-		#a = random.randint(1,n-1)
-		if (pow(a,n-1)-1)%n != 0:
-			return False
-	return True;
+def isPrime(n,k=2,bases=[]):
+	if(bases==[]): # if bases not given, use random 'a'
+		for i in xrange(k):
+			#print "Iteration " + str(i+1)
+			a = random.randint(1,n-1)
+			if (pow(a,n-1)-1)%n != 0:
+				return False
+		return True
+	else: # if bases given, use bases 'a' from the array
+		print "Bases given"
+		for a in bases:
+			#print "Iteration " + str(i+1)
+			if (pow(a,n-1)-1)%n != 0:
+				return False
+		return True
 
 if __name__ == "__main__":
 	k=2 # default amount of iterations 
