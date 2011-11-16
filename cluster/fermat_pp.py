@@ -5,7 +5,7 @@ import pp
 from fermat import isPrime
 from writeresults import writeresults
 
-args = range(int(sys.argv[1]),int(sys.argv[2])+1)
+args = xrange(int(sys.argv[1]),int(sys.argv[2])+1)
 
 ppservers = (,)
 

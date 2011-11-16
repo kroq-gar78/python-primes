@@ -15,3 +15,5 @@ print job_server.get_active_nodes()
 jobs = [(input,job_server.submit(isPrime , (input,), (), ("math",))) for input in args ]
 for input, job in jobs:
 	print input , "is" , job()
+
+writeresults("solovaystrassen",args[len(args)-1],int(primesFound))
