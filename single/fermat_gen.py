@@ -12,4 +12,4 @@ for num in args:
 	if(isPrime(num)):
 		primesFound += 1
 
-writeresults("fermat",args[len(args)-1],int(primesFound))
+writeresults("fermat",int(sys.argv[2])+1,int(primesFound))

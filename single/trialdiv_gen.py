@@ -12,4 +12,4 @@ for num in args:
 	if(isPrime(num)):
 		primesFound += 1
 
-writeresults("trialdiv",args[len(args)-1],int(primesFound))
+writeresults("trialdiv",int(sys.argv[2])+1,int(primesFound))

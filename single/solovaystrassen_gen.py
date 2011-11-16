@@ -14,4 +14,4 @@ for num in args:
 	if (isPrime(num)):
 		primesFound += 1
 
-writeresults("solovaystrassen",args[len(args)-1],int(primesFound))
+writeresults("solovaystrassen",int(sys.argv[2])+1,int(primesFound))

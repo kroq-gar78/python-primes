@@ -23,4 +23,4 @@ for input, job in jobs:
 	if (job() == True):
 		primesFound += 1
 
-writeresults("solovaystrassen",args[len(args)-1],int(primesFound))
+writeresults("solovaystrassen",int(sys.argv[2])+1,int(primesFound))
