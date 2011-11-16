@@ -3,6 +3,7 @@
 import sys
 import pp
 from trialdiv import isPrime
+from writeresults import writeresults
 
 args = xrange(int(sys.argv[1]),int(sys.argv[2])+1)
 
