@@ -4,6 +4,7 @@ import math
 import sys
 
 def isPrime(n):
+	if(n==2): return True
 	primes = [2]
 	for i in range(2,int(math.sqrt(n))+1):
 		ifprime = True
