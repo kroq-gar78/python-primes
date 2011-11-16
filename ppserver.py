@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Parallel Python Software: http://www.parallelpython.com
-# Copyright (c) 2005-2010, Vitalii Vanovschi
+# Copyright (c) 2005-2011, Vitalii Vanovschi
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -46,8 +46,8 @@ import ppauto
 import ppcommon
 import pptransport
 
-copyright = "Copyright (c) 2005-2010 Vitalii Vanovschi. All rights reserved"
-version = "1.6.0"
+copyright = "Copyright (c) 2005-2011 Vitalii Vanovschi. All rights reserved"
+version = "1.6.1"
 
 LISTEN_SOCKET_TIMEOUT = 20
 
@@ -117,9 +117,8 @@ class _NetworkServer(pp.Server):
             self.ssocket.settimeout(LISTEN_SOCKET_TIMEOUT)
             self.ssocket.bind((self.host, self.port))
             self.ssocket.listen(5)
-        except socket.error:
-            self.logger.error("Cannot create socket with port " + str(self.port)
-                    + " (port is already in use)")
+        except socket.error, e:
+            self.logger.error("Cannot create socket for %s:%s, %s", self.host, self.port, e)
 
         try:
             while 1:
