@@ -21,4 +21,4 @@ for input, job in jobs:
 	if (job() == True):
 		primesFound += 1
 
-writeresults("trialdiv",int(sys.argv[2])+1,int(primesFound))
+writeresults("trialdiv",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))
