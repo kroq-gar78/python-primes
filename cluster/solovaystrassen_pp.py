@@ -2,6 +2,7 @@
 
 import sys
 import pp
+from expmod import expmod
 from euclidean import gcd
 from jacobi import jacobi
 from solovaystrassen import isPrime
