@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from expmod import expmod
 import random
 import sys
 
@@ -8,13 +9,12 @@ def isPrime(n,k=2,bases=[]):
 		for i in xrange(k):
 			#print "Iteration " + str(i+1)
 			a = random.randint(1,n-1)
-			if (pow(a,n-1)-1)%n != 0:
+			if expmod(a,n-1,n) != 1:
 				return False
 		return True
 	else: # if bases given, use bases 'a' from the array
 		print "Bases given"
 		for a in bases:
-			#print "Iteration " + str(i+1)
 			if (pow(a,n-1)-1)%n != 0:
 				return False
 		return True
