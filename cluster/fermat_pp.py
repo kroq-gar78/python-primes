@@ -15,10 +15,10 @@ print job_server.get_active_nodes()
 
 primesFound = 0
 
-jobs = [(input,job_server.submit(isPrime , (input,3,), (), ("random",))) for input in args ]
+jobs = [(input,job_server.submit(isPrime , (input,3,), (expmod,), ("random",))) for input in args ]
 for input, job in jobs:
 	#print input , "is" , job()
 	if( job() == True ):
 		primesFound += 1
 
-writeresults("fermat",int(sys.argv[2])+1,int(primesFound))
+writeresults("fermat",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))
