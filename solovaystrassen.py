@@ -9,13 +9,13 @@ def isPrime(n,k=2,bases=[]):
 		for i in range(k):
 			a = random.randint(2,n-1)
 			x=jacobi(a,n)
-			if x==0 and (a**((n-1)/2))%n != x:
+			if x==0 or (a**((n-1)/2))%n != x:
 				return False
 		return True
 	else: # if bases given, use bases 'a' from the array
 		for a in bases:
 			x=jacobi(a,n)
-			if x==0 and (a**((n-1)/2))%n != x:
+			if x==0 or (a**((n-1)/2))%n != x:
 				return False
 		return True
 		
