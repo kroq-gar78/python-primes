@@ -15,7 +15,7 @@ def isPrime(n,k=2,bases=[]):
 	else: # if bases given, use bases 'a' from the array
 		print "Bases given"
 		for a in bases:
-			if (pow(a,n-1)-1)%n != 0:
+			if expmod(a,n-1,n) != 1:
 				return False
 		return True
 

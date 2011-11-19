@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from expmod import expmod
 import random
 import sys
 
@@ -15,7 +16,7 @@ def isPrime(n,k=2,bases=[]):
 		for i in xrange(k):
 			nextLoop = False
 			a = random.randint(2,n-1)
-			x = pow(a,d)%n
+			x = expmod(a,d,n)
 			if x==1 or x==n-1:
 				continue
 			for r in xrange(s):
@@ -34,7 +35,7 @@ def isPrime(n,k=2,bases=[]):
 	else: # if bases given, use bases 'a' from the array
 		for a in bases:
 			nextLoop = False
-			x = pow(a,d)%n
+			x = expmod(a,d,n)
 			if x==1 or x==n-1:
 				continue
 			for r in xrange(s):
@@ -52,6 +53,7 @@ def isPrime(n,k=2,bases=[]):
 		return True
 
 if __name__ == "__main__":
+	k=2
 	if len(sys.argv) < 3:
 		if len(sys.argv) == 2:
 			print "WARNING: RECCOMENDED TO INPUT PREFERRED ACCURACY."

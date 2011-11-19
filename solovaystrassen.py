@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from expmod import expmod
 from jacobi import jacobi
 import random
 import sys
@@ -9,7 +10,7 @@ def isPrime(n,k=2,bases=[]):
 		for i in range(k):
 			a = random.randint(2,n-1)
 			x=jacobi(a,n)
-			if x==0 or (a**((n-1)/2))%n != x:
+			if x==0 or expmod(a,(n-1)/2,n) != x:
 				return False
 		return True
 	else: # if bases given, use bases 'a' from the array
