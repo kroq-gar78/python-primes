@@ -6,17 +6,20 @@ import random
 import sys
 
 def isPrime(n,k=2,bases=[]):
+	if(n==2): return True
+	elif(n&1==0): return False
 	if(bases==[]): # if bases not given, use random 'a'
 		for i in range(k):
-			a = random.randint(2,n-1)
-			x=jacobi(a,n)
+			a = random.randint(1,n-1)
+			#print a
+			x=jacobi(a,n)%n
 			if x==0 or expmod(a,(n-1)/2,n) != x:
 				return False
 		return True
 	else: # if bases given, use bases 'a' from the array
 		for a in bases:
 			x=jacobi(a,n)
-			if x==0 or (a**((n-1)/2))%n != x:
+			if x==0 or expmod(a,(n-1)/2,n) != x:
 				return False
 		return True
 		

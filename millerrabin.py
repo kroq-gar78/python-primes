@@ -15,7 +15,7 @@ def isPrime(n,k=2,bases=[]):
 	if(bases==[]): # if bases not given, use random 'a'
 		for i in xrange(k):
 			nextLoop = False
-			a = random.randint(2,n-1)
+			a = random.randint(1,n-1)
 			x = expmod(a,d,n)
 			if x==1 or x==n-1:
 				continue
