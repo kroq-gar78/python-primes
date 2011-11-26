@@ -5,8 +5,8 @@ import random
 import sys
 
 def isPrime(n,k=2,bases=[]):
-	if( n == 2 ):
-		return True
+	if( n == 2 ): return True
+	if( n&1==0 ): return False # if odd, not prime
 	s=0
 	d=n-1
 	while(d&1==0):

@@ -5,6 +5,7 @@ import random
 import sys
 
 def isPrime(n,k=2,bases=[]):
+	if(n&1==0): return False # if even, not prime
 	if(bases==[]): # if bases not given, use random 'a'
 		for i in xrange(k):
 			#print "Iteration " + str(i+1)
