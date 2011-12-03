@@ -12,12 +12,28 @@ def factorize(n):
 		
 def findfactor(n):
 	if n&1==0: return 2
-	x=random.randint(1,n-1)
-	y=x
-	c=random.randint(1,n-1)
-	g=1
+	y,c,m = random.randint(1,n-1),random.randint(1,n-1),random.randint(1,n-1)
+	g,r,q=1,1,1
 	while g==1:
-		x = (mulmod(x,x,n)+c)%n
-		y = (mulmod(y,y,n)+c)%n
-		y = (mulmod(y,y,n)+c)%n
-		g = gcd(abs(x-y),n)
+		x=y
+		for i in xrange(r):
+			y = (mulmod(y,y,n)+c)%n
+		
+		k=0
+		while (k<r and g==1):
+			ys = y
+			for i in xrange(min(m,r-k)):
+				y = (mulmod(y,y,n)+c)%n
+				q = q*(abs(x-y))%n
+			g=gcd(q,n)
+			k=k+m
+		r<<=1
+	if g==n:
+		while True:
+			ys = (mulmod(ys,ys,n)+c)%n
+			g = gcd(abs(x-ys),n)
+			if g>1:
+				break
+	
+	return g
+	
