@@ -13,6 +13,7 @@ def isPrime(n):
 				ifprime = False
 				break
 		if ifprime:
+			if n%i==0: return False
 			primes.append(i)
 	
 	#print primes
@@ -23,4 +24,4 @@ def isPrime(n):
 	return True
 
 if __name__ == "__main__":
-	print( isPrime(int(sys.argv[1])) )
+	print isPrime(int(sys.argv[1])) 
