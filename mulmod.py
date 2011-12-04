@@ -1,6 +1,10 @@
 #!/usr/bin/python
 
-# calculates (a*b)%c, taking into account that a*b
+# Multiplicative Modulus
+# calculates (a*b)%c, taking into account that a*b might overflow
+
+import sys
+
 def mulmod(a,b,c):
 	x=0
 	y=a%c
