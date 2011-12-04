@@ -11,4 +11,4 @@ def expmod(a,b,c):
 	return x%c
 
 if __name__ == "__main__":
-	print expmod(int(sys.argv[1]),int(sys.argv[2]),int(argv[3]))
+	print expmod(int(sys.argv[1]),int(sys.argv[2]),int(sys.argv[3]))

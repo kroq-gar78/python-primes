@@ -38,4 +38,4 @@ def isPrime(n,k=2,bases=[]):
 		return True
 
 if __name__ == "__main__":
-	print isPrime(int(sys.argv[1]),int(sys.argv[2]),int(argv[3]))
+	print isPrime(int(sys.argv[1]),int(sys.argv[2]),int(sys.argv[3]))
