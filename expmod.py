@@ -4,10 +4,10 @@ from mulmod import mulmod
 import sys
 
 def expmod(a,b,c):
-	x,y = 1,a
+	x = 1
 	while(b>0):
-		if(b&1==1): x = mulmod(x,y,c)
-		y=mulmod(y,y,c)
+		if(b&1==1): x = mulmod(x,a,c)
+		a=mulmod(a,a,c)
 		b >>= 1
 	return x%c
 
