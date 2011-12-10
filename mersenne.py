@@ -2,11 +2,11 @@
 
 import sys
 
+# Calculates Mesenne numbers, which are
+# 2^p-1
+
 def mersenne(p):
-	n = 1
-	for i in xrange(p):
-		n <<= 1
-	return n
+	return (1<<p)-1
 	
 if __name__ == "__main__":
 	print mersenne(int(sys.argv[1]))
