@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-import sys
 
 def gcd(a,b):
 	if( a==b or a==0 or b==0 ): return a|b
@@ -13,4 +12,5 @@ def gcd(a,b):
 		else: return gcd((b-a)>>1,a)
 
 if __name__ == "__main__":
+	import sys
 	print str(gcd(int(sys.argv[1]),int(sys.argv[2])))

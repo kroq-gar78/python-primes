@@ -4,7 +4,6 @@
 
 # Created by Aditya Vaidya kroq-gar78 <kroq.gar78@gmail.com>
 
-import sys
 
 def gcd(a,b):
 	val1=a
@@ -15,5 +14,6 @@ def gcd(a,b):
 	return val1
 
 if __name__ == "__main__":
+	import sys
 	print str(gcd(int(sys.argv[1]),int(sys.argv[2])))
 

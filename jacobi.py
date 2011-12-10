@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 from euclidean import gcd
-import sys
 
 def jacobi(n,m):
 	if gcd(n,m) != 1: return jacobi(n/gcd(n,m),m/gcd(n,m))
@@ -15,4 +14,5 @@ def jacobi(n,m):
 	else: return jacobi(m,n)
 
 if __name__ == "__main__":
+	import sys
 	print jacobi(int(sys.argv[1]),int(sys.argv[2]))

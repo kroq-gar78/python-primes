@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from mersenne import mersenne
-import sys
 
 def lucaslehmer(p):
 	s = 4
@@ -12,4 +11,5 @@ def lucaslehmer(p):
 	return s==0
 
 if __name__ == "__main__":
+	import sys
 	print lucaslehmer(int(sys.argv[1]))

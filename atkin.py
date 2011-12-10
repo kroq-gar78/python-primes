@@ -5,7 +5,6 @@
 # http://en.wikipedia.org/wiki/Sieve_of_Atkin
 
 import math
-import sys
 
 def isPrime(n):
 	if( n==2 or n==3 or n==5 ): return True
@@ -36,4 +35,5 @@ def isPrime(n):
 	return primes
 	
 if __name__ == "__main__":
+	import sys
 	print isPrime(int(sys.argv[1])) 

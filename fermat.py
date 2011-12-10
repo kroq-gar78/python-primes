@@ -2,7 +2,6 @@
 
 from expmod import expmod
 import random
-import sys
 
 def isPrime(n,k=2,bases=[]):
 	if(n&1==0): return (n==2)
@@ -31,6 +30,7 @@ def isPrime(n,k=2,bases=[]):
 		return True
 
 if __name__ == "__main__":
+	import sys
 	k=2 # default amount of iterations 
 	if len(sys.argv) >= 3:
 		k = int(sys.argv[2]) # times to repeat test

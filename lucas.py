@@ -6,7 +6,6 @@
 from expmod import expmod
 from gcd import gcd
 #from pminus1 import factorize
-import sys
 
 def factors_of(n):
 	    f = 2
@@ -43,4 +42,5 @@ def isPrime(n,k=2,bases=[]):
 		return True
 
 if __name__ == "__main__":
+	import sys
 	print isPrime(int(sys.argv[1]),int(sys.argv[2]),int(sys.argv[3]))

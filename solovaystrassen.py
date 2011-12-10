@@ -3,7 +3,6 @@
 from expmod import expmod
 from jacobi import jacobi
 import random
-import sys
 
 def isPrime(n,k=2,bases=[]):
 	if(n&1==0): return (n==2)
@@ -33,6 +32,7 @@ def isPrime(n,k=2,bases=[]):
 		return True
 		
 if __name__ == "__main__":
+	import sys
 	if len(sys.argv) < 3:
 		if len(sys.argv) == 2:
 			print "WARNING: RECCOMENDED TO INPUT PREFERRED ACCURACY."

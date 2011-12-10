@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 from mulmod import mulmod
-import sys
 
 def expmod(a,b,c):
 	x = 1
@@ -12,4 +11,5 @@ def expmod(a,b,c):
 	return x%c
 
 if __name__ == "__main__":
+	import sys
 	print expmod(int(sys.argv[1]),int(sys.argv[2]),int(sys.argv[3]))

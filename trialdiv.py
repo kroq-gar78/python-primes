@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import math
-import sys
 
 def isPrime(n):
 	if(n==2): return True
@@ -24,4 +23,5 @@ def isPrime(n):
 	return True
 
 if __name__ == "__main__":
+	import sys
 	print isPrime(int(sys.argv[1])) 

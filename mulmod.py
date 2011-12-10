@@ -3,7 +3,6 @@
 # Multiplicative Modulus
 # calculates (a*b)%c, taking into account that a*b might overflow
 
-import sys
 
 def mulmod(a,b,c):
 	x=0
@@ -15,4 +14,5 @@ def mulmod(a,b,c):
 	return x%c
 
 if __name__ == "__main__":
+	import sys
 	print mulmod(int(sys.argv[1]),int(sys.argv[2]),int(sys.argv[3]))
