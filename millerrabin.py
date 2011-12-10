@@ -18,7 +18,7 @@ def isPrime(n,k=2,bases=[]):
 			a = 0
 			while(True): # generate 'a' that hasn't been used already
 				a = random.randint(1,n-1)
-				print "New 'a'"
+				#print "New 'a'"
 				if not (a in bases):
 					break
 			x = expmod(a,d,n)
