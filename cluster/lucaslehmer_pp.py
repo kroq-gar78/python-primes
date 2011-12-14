@@ -18,7 +18,7 @@ primesFound = 0
 
 jobs = [(num,job_server.submit(lucaslehmer , (num,), (isPrime,), ("random","math"))) for num in args ]
 for num, job in jobs:
-	#print input , "is" , job()
+	#print num , "is" , job()
 	if( job() == True ):
 		primesFound += 1
 		print "M%d"%num,

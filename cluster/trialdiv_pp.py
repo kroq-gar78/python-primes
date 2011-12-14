@@ -16,9 +16,9 @@ print job_server.get_active_nodes()
 
 primesFound = 0
 
-jobs = [(input,job_server.submit(isPrime , (input,), (), ("math",))) for input in args ]
-for input, job in jobs:
-	#print input , "is" , job()
+jobs = [(num,job_server.submit(isPrime , (num,), (), ("math",))) for num in args ]
+for num, job in jobs:
+	#print num , "is" , job()
 	if (job() == True):
 		primesFound += 1
 
