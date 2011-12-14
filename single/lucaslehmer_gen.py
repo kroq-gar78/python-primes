@@ -12,7 +12,8 @@ primesFound = 0
 for num in args:
 	if(lucaslehmer(num)):
 		primesFound += 1
-		print "M%d"%num
+		print "M%d"%num,
+		sys.stdout.flush()
 
 writeresults("lucaslehmer",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))
 
