@@ -6,11 +6,8 @@
 
 
 def gcd(a,b):
-	val1=a
-	val2=b
-	while val2>0:
-		remainder = val1%val2
-		val1,val2 = val2,remainder
+	while val2:
+		a,b = b,a%b
 	return val1
 
 if __name__ == "__main__":
