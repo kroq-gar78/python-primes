@@ -8,7 +8,7 @@ from writeresults import writeresults
 
 args = xrange(int(sys.argv[1]),int(sys.argv[2])+1)
 
-ppservers=(,)
+ppservers=()
 
 job_server = pp.Server(ppservers=ppservers) # uses num. of processors in system
 
