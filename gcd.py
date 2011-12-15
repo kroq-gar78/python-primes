@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+# Binary gcd (greatest common denominator)
 
 def gcd(a,b):
 	if( a==b or a==0 or b==0 ): return a|b

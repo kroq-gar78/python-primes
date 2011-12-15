@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
-# Fast algorithm for exponential modulus
+# Fast algorithm for modular exponentiation
+
 
 def expmod(a,b,c):
 	x = 1
