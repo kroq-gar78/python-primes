@@ -25,7 +25,7 @@ def isPrime(n,k=2,bases=[]):
 				continue
 			for r in xrange(s):
 				#x = pow(x,2)%n
-				x = mulmod(x,x,n)
+				x = (x*x)%n
 				if x==1: #1^2 will always be 1, so it will never reach the next 'if' statement
 					#print "Breakpoint 1", a
 					return False

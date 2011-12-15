@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
-from mulmod import mulmod
+# Fast algorithm for exponential modulus
 
 def expmod(a,b,c):
 	x = 1
 	while(b>0):
-		if(b&1==1): x = mulmod(x,a,c)
-		a=mulmod(a,a,c)
+		if(b&1==1): x = (x*a)%c
+		a=(a*a)%c
 		b >>= 1
 	return x%c
 

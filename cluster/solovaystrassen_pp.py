@@ -4,7 +4,6 @@ import sys
 import pp
 from expmod import expmod
 from euclidean import gcd
-from mulmod import mulmod
 from jacobi import jacobi
 from solovaystrassen import isPrime
 from writeresults import writeresults
@@ -19,7 +18,7 @@ print job_server.get_active_nodes()
 
 primesFound = 0
 
-jobs = [(num,job_server.submit(isPrime , (num,3,), (jacobi,gcd,expmod,mulmod,), ("random",))) for num in args ]
+jobs = [(num,job_server.submit(isPrime , (num,3,), (jacobi,gcd,expmod,), ("random",))) for num in args ]
 for num, job in jobs:
 	#print num , "is" , job()
 	if (job() == True):
