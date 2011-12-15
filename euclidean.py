@@ -1,14 +1,13 @@
 #!/usr/bin/python
 
 # A program that uses the Euclidean Algorithm for greatest common divisor
-
+#
 # Created by Aditya Vaidya kroq-gar78 <kroq.gar78@gmail.com>
 
 
 def gcd(a,b):
-	while val2:
-		a,b = b,a%b
-	return val1
+	while b: a,b = b,a%b
+	return a
 
 if __name__ == "__main__":
 	import sys
