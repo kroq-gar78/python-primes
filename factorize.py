@@ -27,14 +27,14 @@ def factorize(n,primes=[2]):
 	if factor==0: return [(n,1)]
 			
 	exp=0
-	tmpfactor=factor
+	tmpn=n
 	#print tmpfactor
-	while(n%tmpfactor==0):
+	while(tmpn%factor==0):
 		exp=exp+1
 		#print exp
-		tmpfactor=tmpfactor*factor
+		tmpn=tmpn/factor
 		#print tmpfactor
-		if(tmpfactor>n): break
+		if(n<1): break
 	factors.append((factor,exp))
 	otherfactor=n/(factor**exp)
 	#print otherfactor
