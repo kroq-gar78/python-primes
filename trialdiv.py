@@ -7,7 +7,9 @@ import math
 
 def isPrime(n,primes=[2]):
 	if(n&1==0): return (n==2)
-	for i in xrange(2,int(math.sqrt(n))+1):
+	for i in primes:
+		if(n%i==0): return False
+	for i in xrange(primes[len(primes)-1],int(math.sqrt(n))+1):
 		ifprime = True
 		for j in primes:
 			if i%j == 0:
@@ -15,7 +17,7 @@ def isPrime(n,primes=[2]):
 				break
 		if ifprime:
 			if n%i==0: return False
-			primes.append(i)
+			if( not i in primes ): primes.append(i)
 	
 	#print primes
 	
