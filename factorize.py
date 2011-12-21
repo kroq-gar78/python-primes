@@ -11,7 +11,7 @@ def factorize(n,primes=[2]):
 			factor=i
 			#print "Number found: %d" % factor
 			break
-	for i in range(primes[len(primes)-1],int(math.sqrt(n))+1):
+	for i in xrange(primes[len(primes)-1],int(math.sqrt(n))+1):
 		ifprime = True
 		for j in primes:
 			if i%j == 0:

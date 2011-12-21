@@ -5,7 +5,7 @@ import math
 def isPrime(n):
 	if(n&1==0): return (n==2)
 	primes = [2]
-	for i in range(2,int(math.sqrt(n))+1):
+	for i in xrange(2,int(math.sqrt(n))+1):
 		ifprime = True
 		for j in primes:
 			if i%j == 0:
