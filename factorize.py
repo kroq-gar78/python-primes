@@ -2,6 +2,22 @@
 
 import math
 
+def highest_prime_factor(n,primes=[2]):
+	factors = []
+	factor = 0
+	for i in xrange(primes[len(primes)-1],int(math.sqrt(n))+1):
+		ifprime = True
+		for j in primes:
+			if i%j == 0:
+				ifprime = False
+				break
+		if ifprime:
+			#print i
+			while(n%i==0):
+				n=n/i
+			if(not i in primes): primes.append(i)
+	return n
+			
 def factorize(n,primes=[2]):
 	#primes = [2]
 	factors = []
