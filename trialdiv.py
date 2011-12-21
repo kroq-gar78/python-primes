@@ -3,7 +3,7 @@
 import math
 
 def isPrime(n):
-	if(n==2): return True
+	if(n&1==0): return (n==2)
 	primes = [2]
 	for i in range(2,int(math.sqrt(n))+1):
 		ifprime = True

@@ -5,6 +5,7 @@ import random
 
 def isPrime(n,k=2,bases=[]):
 	if(n&1==0): return (n==2)
+	elif(n%5==0): return (n==5)
 	if(bases==[]): # if bases not given, use random 'a'
 		for i in xrange(k):
 			#print "Iteration " + str(i+1)
