@@ -4,7 +4,7 @@ import math
 	
 def factorize(n,primes=[2]):
 	#primes = [2]
-	factors = []
+	factors = {}
 	factor = 0
 	for i in primes:
 		if(n%i==0):
@@ -24,7 +24,7 @@ def factorize(n,primes=[2]):
 				#print "Number found: %d" % factor
 				break
 			if(not i in primes): primes.append(i)
-	if factor==0: return [(n,1)]
+	if factor==0: return {n:1}
 			
 	exp=0
 	#tmpn=n
@@ -37,13 +37,13 @@ def factorize(n,primes=[2]):
 		#if(n<1): break
 	#n=n*factor
 	#print n
-	factors.append((factor,exp))
+	factors[factor]=exp
 	#otherfactor=n/(factor**exp)
 	#print otherfactor
 	if(n!=factor and n!=1):
 		results=factorize(n)
-		for i in results:
-			factors.append(i)
+		for i in results.keys():
+			factors[i]=results[i]
 	return factors
 
 if __name__ == "__main__":
