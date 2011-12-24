@@ -62,4 +62,4 @@ def isPrime(n,primes=[2]):
 
 if __name__ == "__main__":
 	import sys
-	print highest_prime_factor2(int(sys.argv[1])) 
+	print highest_prime_factor(int(sys.argv[1])) 
