@@ -13,7 +13,7 @@ def factorize(n,primes=[2]):
 		for i in xrange(primes[len(primes)-1],int(math.sqrt(n))+1):
 			ifprime = True
 			for j in primes:
-				if i%j == 0:
+				if i%j==0:
 					ifprime = False
 					break
 			if ifprime:
@@ -25,8 +25,8 @@ def factorize(n,primes=[2]):
 			
 	exp=0
 	while(n%factor==0):
-		exp=exp+1
-		n=n/factor
+		exp=+1
+		n=/factor
 	factors[factor]=exp
 	if(n!=factor and n!=1):
 		results=factorize(n)
