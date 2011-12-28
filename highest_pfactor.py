@@ -5,9 +5,12 @@ import math
 def highest_prime_factor2(n):
 	if isprime(n):
 		return n
-	for x in xrange(2,int(n ** 0.5 + 1)):
-		if not n % x:
-			return highest_prime_factor2(n/x)
+	for x in xrange(2,int(n**0.5)+1):
+		while n%x==0:
+			n/=x
+			print n,x
+		if n==1: n=x
+		return highest_prime_factor2(n)
 			
 def isprime(n):
 	for x in xrange(2,int(n ** 0.5 + 1)):
@@ -62,4 +65,4 @@ def isPrime(n,primes=[2]):
 
 if __name__ == "__main__":
 	import sys
-	print highest_prime_factor(int(sys.argv[1])) 
+	print highest_prime_factor2(int(sys.argv[1])) 
