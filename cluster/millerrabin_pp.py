@@ -16,7 +16,7 @@ print job_server.get_active_nodes()
 
 primesFound = 0
 
-jobs = [(num,job_server.submit(isPrime , (num,3,), (expmod,), ("random",))) for num in args ]
+jobs = [(num,job_server.submit(isPrime , (num,int(sys.argv[3]),), (expmod,), ("random",))) for num in args ]
 for num, job in jobs:
 	#print num , "is" , job()
 	if( job() == True ):
