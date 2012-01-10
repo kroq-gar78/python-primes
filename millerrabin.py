@@ -4,8 +4,6 @@ from expmod import expmod
 import random
 
 def isPrime(n,k=2,bases=[]):
-	if(n&1==0): return (n==2)
-	elif(n%5==0): return (n==5)
 	s=0
 	d=n-1
 	while(d&1==0):
