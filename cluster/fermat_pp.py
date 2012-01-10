@@ -10,7 +10,7 @@ def batch(start,end,k=2,bases=[]):
 	primesFound = 0
 	if bases==[]:
 		for i in xrange(start,end):
-			if(isPrime(n,k): primesFound+=1
+			if(isPrime(n,k)): primesFound+=1
 	else:
 		for i in xrange(start,end):
 			if(isPrime(n,bases=bases)): primesFound+=1
@@ -28,13 +28,40 @@ rangeStart = (int(sys.argv[1]))
 rangeEnd = (int(sys.argv[2]))
 
 primesFound = 0
-numJobs = (rangeStart-rangeEnd+1)
-jobsPerBatch = 1<<10 # amount of jobs per batch
+numJobs = (rangeEnd-rangeStart+1)
+print "Number of jobs:" , numJobs
+jobsPerBatch = 1<<4 # amount of jobs per batch
 jobsInExtraBatch = numJobs%jobsPerBatch
-batchesSent = 0
+numJobs -= jobsInExtraBatch # remove the modulo just for simplicity
+batchesSent = 0 # amount of batches sent EXCLUDING extra batch
 # first do the extra batch to reduce the complexity of code
 if jobsInExtraBatch != 0:
-	jobs.append( job_server.submit(batch , (rangeStart,rangeStart+jobsInExtraBatch,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
-#while batchesSent*jobsPerBatch+jobsInExtraBatch < (int
+	#jobs.append( job_server.submit(batch , (rangeStart,rangeStart+jobsInExtraBatch,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
+	print "Extra:" , rangeStart , rangeStart+jobsInExtraBatch
+
+batchRangeStart = 0
+if jobsInExtraBatch == 0:
+	batchRangeStart = rangeStart
+else:
+	batchRangeStart = rangeStart+jobsInExtraBatch+1
+batchRangeEnd = batchRangeStart+jobsPerBatch-1
+print "Start of batch 1:" , batchRangeStart
+print "End of batch 1:" , batchRangeEnd
+batchesSent=1
+
+#while (batchesSent*jobsPerBatch) < numJobs :
+	#jobs.append( job_server.submit(batch , (rangeStart*(batchesSent+1)+jobsInExtraBatch,rangeStart+jobsInExtraBatch,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
+
+while (batchesSent*jobsPerBatch) < numJobs:
+	
+	batchRangeStart = batchRangeEnd+1
+	batchRangeEnd = batchRangeStart+jobsPerBatch-1
+	print str("Start of batch %d:" % int(batchesSent+1)) , batchRangeStart
+	print str("End of batch %d:" % int(batchesSent+1)) , batchRangeEnd
+	print "\n"
+	batchesSent+=1
+
+for job in jobs:
+	primesFound+=job()
 
 writeresults("fermat",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))
