@@ -6,6 +6,15 @@ from expmod import expmod
 from fermat import isPrime
 from writeresults import writeresults
 
+def batch(start,end,k=2,bases=[]):
+	primesFound = 0
+	if bases==[]:
+		for i in xrange(start,end):
+			if(isPrime(n,k): primesFound+=1
+	else:
+		for i in xrange(start,end):
+			if(isPrime(n,bases=bases)): primesFound+=1
+
 args = xrange(int(sys.argv[1]),int(sys.argv[2])+1)
 
 ppservers = ()
