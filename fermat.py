@@ -30,10 +30,13 @@ def isPrime(n,k=2,bases=[]):
 
 if __name__ == "__main__":
 	import sys
-	k=2 # default amount of iterations 
-	if len(sys.argv) >= 3:
-		k = int(sys.argv[2]) # times to repeat test
+	k=2 # default amount of iterations
+	if len(sys.argv) < 3:
+			if len(sys.argv) == 1:
+				print "ERROR: NEED AT LEAST 1 NUMERICAL ARGUMENT TO TEST PRIMALITY."
+				exit()
+	else:
+		k = int(sys.argv[2]) # amount of bases to test against
 	n = int(sys.argv[1]) # number to test for primality
-	#a = 78 # "Fermat witness" - test 'n' against this
 	
 	print isPrime(int(sys.argv[1]),k)

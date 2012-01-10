@@ -63,16 +63,13 @@ def isPrime(n,k=2,bases=[]):
 
 if __name__ == "__main__":
 	import sys
-	k=2
+	k=2 # default amount of iterations
 	if len(sys.argv) < 3:
-		if len(sys.argv) == 2:
-			print "WARNING: RECCOMENDED TO INPUT PREFERRED ACCURACY."
-			#k = 2
-		else:
-			print "ERROR: NEED AT LEAST 1 NUMERICAL ARGUMENT TO TEST PRIMALITY."
-			exit()
+			if len(sys.argv) == 1:
+				print "ERROR: NEED AT LEAST 1 NUMERICAL ARGUMENT TO TEST PRIMALITY."
+				exit()
 	else:
-		k = int(sys.argv[2]) # accuracy of the test
+		k = int(sys.argv[2]) # amount of bases to test against
 	n = int(sys.argv[1]) # number to test for primality
 
 	print isPrime(n,k)
