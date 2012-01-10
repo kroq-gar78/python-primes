@@ -69,7 +69,5 @@ while (batchesSent*jobsPerBatch) < numJobs:
 
 for job in jobs:
 	primesFound+=int(job())
-	
-print primesFound 
 
-#writeresults("fermat",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))
+writeresults("fermat",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))
