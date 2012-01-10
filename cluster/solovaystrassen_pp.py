@@ -18,8 +18,6 @@ def batch(start,end,k=2,bases=[]):
 			if(isPrime(n,bases=bases)): primesFound+=1
 	return primesFound
 
-args = xrange(int(sys.argv[1]),int(sys.argv[2])+1)
-
 ppservers = ()
 
 job_server = pp.Server(ppservers=ppservers) # uses num. of processors in system
