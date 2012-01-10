@@ -7,13 +7,15 @@ from fermat import isPrime
 from writeresults import writeresults
 
 def batch(start,end,k=2,bases=[]):
-	primesFound = 0
+	print "batch starting"
+	primesFound = []
 	if bases==[]:
-		for i in xrange(start,end):
-			if(isPrime(n,k)): primesFound+=1
+		for n in xrange(start,end):
+			if(isPrime(n,k)): primesFound.append(n)
 	else:
-		for i in xrange(start,end):
-			if(isPrime(n,bases=bases)): primesFound+=1
+		for n in xrange(start,end):
+			if(isPrime(n,bases=bases)): primesFound.append(n)
+	return primesFound
 
 args = xrange(int(sys.argv[1]),int(sys.argv[2])+1)
 
@@ -27,7 +29,7 @@ print job_server.get_active_nodes()
 rangeStart = (int(sys.argv[1]))
 rangeEnd = (int(sys.argv[2]))
 
-primesFound = 0
+primesFound = []
 numJobs = (rangeEnd-rangeStart+1)
 print "Number of jobs:" , numJobs
 jobsPerBatch = 1<<4 # amount of jobs per batch
@@ -36,17 +38,18 @@ numJobs -= jobsInExtraBatch # remove the modulo just for simplicity
 batchesSent = 0 # amount of batches sent EXCLUDING extra batch
 # first do the extra batch to reduce the complexity of code
 if jobsInExtraBatch != 0:
-	#jobs.append( job_server.submit(batch , (rangeStart,rangeStart+jobsInExtraBatch,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
+	jobs.append( job_server.submit(batch , (rangeStart,rangeStart+jobsInExtraBatch,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
 	print "Extra:" , rangeStart , rangeStart+jobsInExtraBatch
 
 batchRangeStart = 0
 if jobsInExtraBatch == 0:
 	batchRangeStart = rangeStart
 else:
-	batchRangeStart = rangeStart+jobsInExtraBatch+1
-batchRangeEnd = batchRangeStart+jobsPerBatch-1
+	batchRangeStart = rangeStart+jobsInExtraBatch
+batchRangeEnd = batchRangeStart+jobsPerBatch
 print "Start of batch 1:" , batchRangeStart
 print "End of batch 1:" , batchRangeEnd
+jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
 batchesSent=1
 
 #while (batchesSent*jobsPerBatch) < numJobs :
@@ -54,14 +57,20 @@ batchesSent=1
 
 while (batchesSent*jobsPerBatch) < numJobs:
 	
-	batchRangeStart = batchRangeEnd+1
-	batchRangeEnd = batchRangeStart+jobsPerBatch-1
+	batchRangeStart = batchRangeEnd
+	batchRangeEnd = batchRangeStart+jobsPerBatch
 	print str("Start of batch %d:" % int(batchesSent+1)) , batchRangeStart
 	print str("End of batch %d:" % int(batchesSent+1)) , batchRangeEnd
 	print "\n"
+	jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
+
 	batchesSent+=1
 
 for job in jobs:
-	primesFound+=job()
+	newPrimes=job()
+	for i in newPrimes:
+		primesFound.append(i)
+	
+print primesFound , len(primesFound)
 
-writeresults("fermat",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))
+#writeresults("fermat",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))
