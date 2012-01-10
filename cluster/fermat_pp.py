@@ -31,7 +31,7 @@ rangeEnd = (int(sys.argv[2]))
 primesFound = 0
 numJobs = (rangeEnd-rangeStart+1)
 #print "Number of jobs:" , numJobs
-jobsPerBatch = 1<<4 # amount of jobs per batch
+jobsPerBatch = 1<<14 # amount of jobs per batch
 jobsInExtraBatch = numJobs%jobsPerBatch
 numJobs -= jobsInExtraBatch # remove the modulo just for simplicity
 batchesSent = 0 # amount of batches sent EXCLUDING extra batch
