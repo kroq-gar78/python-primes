@@ -60,7 +60,7 @@ if batchRangeEnd > rangeEnd: batchRangeEnd = rangeEnd
 jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (isPrime,), ("random","time",)) )
 batchesSent=1
 
-print "Amount of batches:" , numJobs/jobsPerBatch
+#print "Amount of batches:" , numJobs/jobsPerBatch
 
 while (batchesSent*jobsPerBatch) < numJobs:
 	
