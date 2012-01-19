@@ -23,8 +23,6 @@ ppservers = ()
 job_server = pp.Server(ppservers=ppservers) # uses num. of processors in system
 jobs = []
 
-print job_server.get_active_nodes()
-
 rangeStart = (int(sys.argv[1]))
 rangeEnd = (int(sys.argv[2]))
 
