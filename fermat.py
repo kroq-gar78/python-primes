@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-from expmod import expmod
 import random
 
 def isPrime(n,k=2,bases=[]):
@@ -13,7 +12,7 @@ def isPrime(n,k=2,bases=[]):
 				#print "New 'a'"
 				if not (a in bases):
 					break
-			if expmod(a,n-1,n) != 1:
+			if pow(a,n-1,n) != 1:
 				return False
 		return True
 	else: # if bases given, use bases 'a' from the array
@@ -22,7 +21,7 @@ def isPrime(n,k=2,bases=[]):
 		for a in bases:
 			if a > n-1:
 				continue
-			if expmod(a,n-1,n) != 1:
+			if pow(a,n-1,n) != 1:
 				return False
 			basesTested = basesTested+1
 		if basesTested == 0: return "Bases too large for number to be tested."

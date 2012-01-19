@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-from expmod import expmod
 from jacobi import jacobi
 import random
 
@@ -15,7 +14,7 @@ def isPrime(n,k=2,bases=[]):
 					break
 			#print a
 			x=jacobi(a,n)%n
-			if x==0 or expmod(a,(n-1)/2,n) != x:
+			if x==0 or pow(a,(n-1)/2,n) != x:
 				return False
 		return True
 	else: # if bases given, use bases 'a' from the array
@@ -24,7 +23,7 @@ def isPrime(n,k=2,bases=[]):
 			if a > n-1:
 				continue
 			x=jacobi(a,n)
-			if x==0 or expmod(a,(n-1)/2,n) != x:
+			if x==0 or pow(a,(n-1)/2,n) != x:
 				return False
 			basesTested = basesTested+1
 		if basesTested == 0: return "Bases too large for number to be tested."

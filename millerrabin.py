@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-from expmod import expmod
 import random
 
 def isPrime(n,k=2,bases=[]):
@@ -18,7 +17,7 @@ def isPrime(n,k=2,bases=[]):
 				#print "New 'a'"
 				if not (a in bases):
 					break
-			x = expmod(a,d,n)
+			x = pow(a,d,n)
 			if x==1 or x==n-1:
 				continue
 			for r in xrange(s):
@@ -41,7 +40,7 @@ def isPrime(n,k=2,bases=[]):
 			if a > n-1:
 				continue
 			nextLoop = False
-			x = expmod(a,d,n)
+			x = pow(a,d,n)
 			if x==1 or x==n-1:
 				continue
 			for r in xrange(s):
