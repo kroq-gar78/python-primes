@@ -38,7 +38,7 @@ numJobs -= jobsInExtraBatch # remove the modulo just for simplicity
 batchesSent = 0 # amount of batches sent EXCLUDING extra batch
 # first do the extra batch to reduce the complexity of code
 if jobsInExtraBatch != 0:
-	jobs.append( job_server.submit(batch , (rangeStart,rangeStart+jobsInExtraBatch,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
+	jobs.append( job_server.submit(batch , (rangeStart,rangeStart+jobsInExtraBatch,int(sys.argv[3]),), (expmod,isPrime,), ("random","time",)) )
 	#print "Extra:" , rangeStart , rangeStart+jobsInExtraBatch
 
 if numJobs <= 0:
@@ -57,7 +57,7 @@ batchRangeEnd = batchRangeStart+jobsPerBatch
 if batchRangeEnd > rangeEnd: batchRangeEnd = rangeEnd
 #print "Start of batch 1:" , batchRangeStart
 #print "End of batch 1:" , batchRangeEnd
-jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (isPrime,), ("random",)) )
+jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (isPrime,), ("random","time",)) )
 batchesSent=1
 
 print "Amount of batches:" , numJobs/jobsPerBatch
@@ -69,7 +69,7 @@ while (batchesSent*jobsPerBatch) < numJobs:
 	#print str("Start of batch %d:" % int(batchesSent+1)) , batchRangeStart
 	#print str("End of batch %d:" % int(batchesSent+1)) , batchRangeEnd
 	#print "\n"
-	jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (isPrime,), ("random",)) )
+	jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (isPrime,), ("random","time",)) )
 
 	batchesSent+=1
 

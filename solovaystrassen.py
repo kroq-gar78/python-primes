@@ -2,8 +2,10 @@
 
 from jacobi import jacobi
 import random
+import time
 
-def isPrime(n,k=2,bases=[]):
+def isPrime(n,k=2,bases=[],seed=time.time()):
+	random.seed(time.time())
 	if(bases==[]): # if bases not given, use random 'a'
 		for i in range(k):
 			a = 0

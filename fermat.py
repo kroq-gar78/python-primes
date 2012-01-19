@@ -1,8 +1,10 @@
 #!/usr/bin/python
 
 import random
+import time
 
-def isPrime(n,k=2,bases=[]):
+def isPrime(n,k=2,bases=[],seed=time.time()):
+	random.seed(seed)
 	if(bases==[]): # if bases not given, use random 'a'
 		for i in xrange(k):
 			#print "Iteration " + str(i+1)
