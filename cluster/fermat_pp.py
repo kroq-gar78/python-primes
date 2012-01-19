@@ -2,7 +2,6 @@
 
 import sys
 import pp
-from expmod import expmod
 from fermat import isPrime
 from writeresults import writeresults
 
