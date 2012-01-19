@@ -58,7 +58,7 @@ batchRangeEnd = batchRangeStart+jobsPerBatch
 if batchRangeEnd > rangeEnd: batchRangeEnd = rangeEnd
 #print "Start of batch 1:" , batchRangeStart
 #print "End of batch 1:" , batchRangeEnd
-jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
+jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (isPrime,), ("random",)) )
 batchesSent=1
 
 #while (batchesSent*jobsPerBatch) < numJobs :
@@ -73,7 +73,7 @@ while (batchesSent*jobsPerBatch) < numJobs:
 	#print str("Start of batch %d:" % int(batchesSent+1)) , batchRangeStart
 	#print str("End of batch %d:" % int(batchesSent+1)) , batchRangeEnd
 	#print "\n"
-	jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
+	jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (isPrime,), ("random",)) )
 
 	batchesSent+=1
 
