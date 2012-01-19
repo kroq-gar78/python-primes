@@ -83,5 +83,7 @@ while (batchesSent*jobsPerBatch) < numJobs:
 
 for job in jobs:
 	primesFound+=int(job())
+	
+job_server.print_stats()
 
 writeresults("solovaystrassen",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))
