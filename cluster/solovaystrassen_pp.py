@@ -34,9 +34,9 @@ elif numJobs >= 100000: jobsPerBatch = 1<<12
 else:
 	jobsPerBatch = 1<<10
 jobsInExtraBatch = numJobs%jobsPerBatch
-print "Jobs in extra batch: " + str(jobsInExtraBatch)
-print "Start of extra batch: " + str(rangeStart)
-print "End of extra batch: " + str(rangeStart+jobsInExtraBatch)
+#print "Jobs in extra batch: " + str(jobsInExtraBatch)
+#print "Start of extra batch: " + str(rangeStart)
+#print "End of extra batch: " + str(rangeStart+jobsInExtraBatch)
 numJobs -= jobsInExtraBatch # remove the modulo just for simplicity
 batchesSent = 0 # amount of batches sent EXCLUDING extra batch
 # first do the extra batch to reduce the complexity of code
@@ -47,7 +47,7 @@ if jobsInExtraBatch != 0:
 if numJobs <= 0:
 	for job in jobs:
 		primesFound+=int(job())
-	print "No more batches needed."
+	#print "No more batches needed."
 	writeresults("solovaystrassen",str(rangeStart)+"to"+str(rangeEnd)+"_b"+sys.argv[3],int(primesFound))
 	exit()
 
@@ -66,7 +66,7 @@ batchesSent=1
 #while (batchesSent*jobsPerBatch) < numJobs :
 	#jobs.append( job_server.submit(batch , (rangeStart*(batchesSent+1)+jobsInExtraBatch,rangeStart+jobsInExtraBatch,int(sys.argv[3]),), (expmod,isPrime,), ("random",)) )
 
-print "Amount of batches:" , numJobs/jobsPerBatch
+#print "Amount of batches:" , numJobs/jobsPerBatch
 
 while (batchesSent*jobsPerBatch) < numJobs:
 	

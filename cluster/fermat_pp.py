@@ -32,9 +32,9 @@ elif numJobs >= 100000: jobsPerBatch = 1<<12
 else:
 	jobsPerBatch = 1<<10
 jobsInExtraBatch = numJobs%jobsPerBatch
-print "Jobs in extra batch: " + str(jobsInExtraBatch)
-print "Start of extra batch: " + str(rangeStart)
-print "End of extra batch: " + str(rangeStart+jobsInExtraBatch)
+#print "Jobs in extra batch: " + str(jobsInExtraBatch)
+#print "Start of extra batch: " + str(rangeStart)
+#print "End of extra batch: " + str(rangeStart+jobsInExtraBatch)
 numJobs -= jobsInExtraBatch # remove the modulo just for simplicity
 batchesSent = 0 # amount of batches sent EXCLUDING extra batch
 # first do the extra batch to reduce the complexity of code
@@ -45,7 +45,7 @@ if jobsInExtraBatch != 0:
 if numJobs <= 0:
 	for job in jobs:
 		primesFound+=int(job())
-	print "No more batches needed."
+	#print "No more batches needed."
 	writeresults("fermat",str(rangeStart)+"to"+str(rangeEnd)+"_b"+sys.argv[3],int(primesFound))
 	exit()
 
@@ -56,8 +56,8 @@ else:
 	batchRangeStart = rangeStart+jobsInExtraBatch
 batchRangeEnd = batchRangeStart+jobsPerBatch
 if batchRangeEnd > rangeEnd: batchRangeEnd = rangeEnd
-print "Start of batch 1:" , batchRangeStart
-print "End of batch 1:" , batchRangeEnd
+#print "Start of batch 1:" , batchRangeStart
+#print "End of batch 1:" , batchRangeEnd
 jobs.append( job_server.submit(batch , (batchRangeStart,batchRangeEnd,int(sys.argv[3]),), (isPrime,), ("random",)) )
 batchesSent=1
 
