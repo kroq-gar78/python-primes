@@ -38,7 +38,7 @@ numJobs -= jobsInExtraBatch # remove the modulo just for simplicity
 batchesSent = 0 # amount of batches sent EXCLUDING extra batch
 # first do the extra batch to reduce the complexity of code
 if jobsInExtraBatch != 0:
-	jobs.append( job_server.submit(batch , (rangeStart,rangeStart+jobsInExtraBatch,int(sys.argv[3]),), (expmod,isPrime,), ("random","time",)) )
+	jobs.append( job_server.submit(batch , (rangeStart,rangeStart+jobsInExtraBatch,int(sys.argv[3]),), (isPrime,), ("random","time",)) )
 	#print "Extra:" , rangeStart , rangeStart+jobsInExtraBatch
 
 if numJobs <= 0:
