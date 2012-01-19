@@ -48,7 +48,7 @@ if numJobs <= 0:
 	for job in jobs:
 		primesFound+=int(job())
 	print "No more batches needed."
-	writeresults("fermat",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))	
+	writeresults("fermat",str(rangeStart)+"to"+str(rangeEnd)+"_b"+sys.argv[3],int(primesFound))
 	exit()
 
 batchRangeStart = 0
@@ -81,4 +81,4 @@ for job in jobs:
 	
 job_server.print_stats()
 
-writeresults("fermat",int(sys.argv[2])-int(sys.argv[1])+1,int(primesFound))
+writeresults("fermat",str(rangeStart)+"to"+str(rangeEnd)+"_b"+sys.argv[3],int(primesFound))
