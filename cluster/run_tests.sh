@@ -4,22 +4,22 @@
 
 #ranges=( 1000 10000 1000000 10000000 100000000 1000000000 )
 ranges=( 1000 10000 1000000 10000000 )
-	
-for i in 1 2 3 # num. of bases
+
+for (( i=1; i<$((${#ranges[*]})); i++ )) # iterate through array 'ranges' at the top of the file
 do
-	#echo "Base(s): $i"
-	dir_bases="bases_$i"
-	for (( j=1; j<$((${#ranges[*]})); j++ )) # iterate through array 'ranges' at the top of the file
+	time python trialdiv_pp.py ${ranges[$j-1]} ${ranges[$j]}
+	for j in 1 2 3 # num. of bases
 	do
-		time python trialdiv_pp.py ${ranges[$j-1]} ${ranges[$j]}
+		#echo "Base(s): $i"
+		dir_bases="bases_$k"
 		for k in 1 2 3 4 5 # multiple trials
 		do
 			dir_trial="trial$k"
 			mkdir -p "$dir_bases/$dir_trial/"
-			echo "${ranges[$j-1]} ${ranges[$j]}"
-			time python fermat_pp.py ${ranges[$j-1]} ${ranges[$j]} $i
-			time python solovaystrassen_pp.py ${ranges[$j-1]} ${ranges[$j]} $i
-			time python millerrabin_pp.py ${ranges[$j-1]} ${ranges[$j]} $i
+			echo "${ranges[$i-1]} ${ranges[$i]}"
+			time python fermat_pp.py ${ranges[$i-1]} ${ranges[$i]} $i
+			time python solovaystrassen_pp.py ${ranges[$i-1]} ${ranges[$i]} $i
+			time python millerrabin_pp.py ${ranges[$i-1]} ${ranges[$i]} $i
 			mv *.accuracy "$dir_bases/$dir_trial/" # move data to their respective directories
 		done
 	done
