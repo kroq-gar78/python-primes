@@ -4,6 +4,7 @@ import random
 import time
 
 def isPrime(n,k=2,bases=[],seed=time.time()):
+	if(n&1==0): return (n==2)
 	random.seed(seed)
 	if(bases==[]): # if bases not given, use random 'a'
 		for i in xrange(k):
