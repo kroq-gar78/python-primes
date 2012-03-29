@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Factorize a number into its prime factors
+
 import math
 	
 def factorize(n,primes=[2]):

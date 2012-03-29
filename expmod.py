@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # Fast algorithm for modular exponentiation
-
+# NOTE: Use pow(a,b,c) instead. It is faster than this algorithm
 
 def expmod(a,b,c):
 	x = 1

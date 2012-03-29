@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Program to calculate the Jacobi symbol
+
 from euclidean import gcd
 
 def jacobi(n,m):

@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Parallel Python implementation of the Miller-Rabin Primality Test
+
 import sys
 import pp
 from millerrabin import isPrime

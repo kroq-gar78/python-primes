@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Find all primes in the given range using the Miller-Rabin Primality Test
+
 import sys
 from millerrabin import isPrime
 from writeresults import writeresults

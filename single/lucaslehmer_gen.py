@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Find all primes in the given range using the Lucas-Lehmer Primality Test
+
 import sys
 from lucaslehmer import lucaslehmer
 from trialdiv import isPrime

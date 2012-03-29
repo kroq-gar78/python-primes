@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Parallel Python implementation of Fermat's Primality Test
+
 import sys
 import pp
 from fermat import isPrime

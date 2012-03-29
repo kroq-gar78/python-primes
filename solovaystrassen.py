@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Solovay-Strassen Primality Test
+
 from jacobi import jacobi
 import random
 import time

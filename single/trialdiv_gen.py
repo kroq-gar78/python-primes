@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Find all primes in the given range using trial division
+
 import sys
 from trialdiv import isPrime
 from writeresults import writeresults

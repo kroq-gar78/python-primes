@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
-import math
-
 # Trial Division primality test
 # Manually checks all prime numbers against the input
+
+import math
 
 def isPrime(n,primes=[2]):
 	if(n&1==0): return (n==2)

@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 # Calculates Mesenne numbers, which are
 # 2^p-1
 

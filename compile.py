@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Compile Python code into '.pyc'
+
 import py_compile
 import sys
 

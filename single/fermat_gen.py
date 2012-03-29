@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Find all primes in the given range using Fermat's Primality Test
+
 import sys
 from fermat import isPrime
 from writeresults import writeresults

@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Parallel Python implementation of trial division
+
 import sys
 import pp
 from trialdiv import isPrime

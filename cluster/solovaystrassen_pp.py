@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Parallel Python implementation of the Solovay-Strassen Primality Test
+
 import sys
 import pp
 from euclidean import gcd

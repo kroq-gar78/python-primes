@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Parallel Python implementation of the Lucas-Lehmer Primality Test
+
 import sys
 import pp
 from lucaslehmer import lucaslehmer

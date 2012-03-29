@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# Find the highest prime factor of 'n'
+
 import math
 
 def highest_prime_factor2(n):
