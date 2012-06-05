@@ -27,7 +27,7 @@ def factorize(n,primes=[2]):
 			
 	exp=0
 	while(n%factor==0):
-		exp=+1
+		exp+=1
 		n/=factor
 	factors[factor]=exp
 	if(n!=factor and n!=1):
