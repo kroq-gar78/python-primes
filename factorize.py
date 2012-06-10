@@ -1,11 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-# Factorize a number into its prime factors
+# Factorize a number into its prime factors, and find their exponents, too
+# Created by Aditya Vaidya <kroq.gar78@gmail.com>
 
 import math
-	
+
 def factorize(n,primes=[2]):
-	factors = {}
+	factorization = {}
 	factor = 0
 	for i in primes:
 		if(n%i==0):
@@ -29,13 +30,13 @@ def factorize(n,primes=[2]):
 	while(n%factor==0):
 		exp+=1
 		n/=factor
-	factors[factor]=exp
+	factorization[factor]=exp
 	if(n!=factor and n!=1):
 		results=factorize(n)
 		for i in results.keys():
-			factors[i]=results[i]
-	return factors
+			factorization[i]=results[i]
+	return factorization
 
 if __name__ == "__main__":
 	import sys
-	print factorize(int(sys.argv[1])) 
+	print factorize(int(sys.argv[1]))
