@@ -37,6 +37,20 @@ def factorize(n,primes=[2]):
 			factorization[i]=results[i]
 	return factorization
 
+# Uses pfactors.py to first find the prime factors, and then
+# calculate the exponents
+def factorize2(n):
+	from pfactors import pfactors
+	factorization = {}
+	factors = pfactors(n)
+	for i in factors:
+		exp=0
+		while(n%i==0):
+			exp+=1
+			n/=i
+		factorization[i]=exp
+	return factorization
+
 if __name__ == "__main__":
 	import sys
 	print factorize(int(sys.argv[1]))
