@@ -6,7 +6,7 @@
 import math
 
 def fermat_num(n):
-	return (1<<(2*(n-1)))+1
+	return (1<<(1<<n))+1
 
 if __name__ == "__main__":
 	import sys

@@ -6,9 +6,10 @@
 import math
 
 def pepin(n):
-	return (3,(n-1)/2,n)==n-1
+	if n==3: return True
+	return pow(3,(n-1)>>1,n)==n-1
 	
-# pepin(n), exceot by passing the index of Fermat number (index startign with 0)
+# pepin(n), except by passing the index of Fermat number (index startign with 0)
 def pepin_term(n):
 	from fermat_num import fermat_num
 	return pepin(fermat_num(n))
