@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Lucas Primality Test
 # http://en.wikipedia.org/wiki/Lucas_primality_test

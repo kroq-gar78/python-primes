@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Trial Division primality test
 # Manually checks all prime numbers against the input

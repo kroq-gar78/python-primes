@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Seive of Atkin
 # Optimization of Sieve of Eratosthenes (trial division) for computers

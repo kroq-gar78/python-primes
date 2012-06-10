@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # A program that uses the Euclidean Algorithm for greatest common divisor
 #

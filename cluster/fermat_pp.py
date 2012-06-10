@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Parallel Python implementation of Fermat's Primality Test
 

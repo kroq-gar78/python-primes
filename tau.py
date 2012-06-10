@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Calculate the number of positive integer divisors of 'n'
 # Created by Aditya Vaidya <kroq.gar78@gmail.com>

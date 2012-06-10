@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Find all primes in the given range using Fermat's Primality Test
 
