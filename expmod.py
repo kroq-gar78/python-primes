@@ -1,6 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Fast algorithm for modular exponentiation
+# Calculates (a^b)%c
 # NOTE: Use pow(a,b,c) instead. It is faster than this algorithm
 
 def expmod(a,b,c):
