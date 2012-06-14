@@ -32,6 +32,7 @@ def pfactors(n,primes=[2]):
 					if isprime and (not n in factors): factors.append(n)
 					if(n==1 or isprime): return factors
 				if(not i in primes): primes.append(i)
+	if factors==[]: return [n]
 
 	return factors
 
