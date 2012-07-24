@@ -5,7 +5,7 @@
 
 import math
 
-def isPrime(n,primes=[2]):
+def trialdiv(n,primes=[2]):
 	if(n&1==0): return (n==2)
 	for i in primes:
 		if(n%i==0): return False
@@ -28,4 +28,4 @@ def isPrime(n,primes=[2]):
 
 if __name__ == "__main__":
 	import sys
-	print isPrime(int(sys.argv[1])) 
+	print trialdiv(int(sys.argv[1])) 

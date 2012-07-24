@@ -6,7 +6,7 @@
 
 import math
 
-def isPrime(n):
+def atkin(n):
 	if( n==2 or n==3 or n==5 ): return True
 	primes = [2,3,5]
 	sieve = [False]*(n+1)
@@ -36,4 +36,4 @@ def isPrime(n):
 	
 if __name__ == "__main__":
 	import sys
-	print isPrime(int(sys.argv[1])) 
+	print atkin(int(sys.argv[1])) 

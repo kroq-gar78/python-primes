@@ -4,7 +4,7 @@
 
 import sys
 import pp
-from trialdiv import isPrime
+from trialdiv import trialdiv
 from writeresults import writeresults
 
 args = xrange(int(sys.argv[1]),int(sys.argv[2])+1)
@@ -17,7 +17,7 @@ print job_server.get_active_nodes()
 
 primesFound = 0
 
-jobs = [(num,job_server.submit(isPrime , (num,), (), ("math",))) for num in args ]
+jobs = [(num,job_server.submit(trialdiv , (num,), (), ("math",))) for num in args ]
 for num, job in jobs:
 	#print num , "is" , job()
 	if (job() == True):

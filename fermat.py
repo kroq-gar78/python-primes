@@ -5,7 +5,7 @@
 import random
 import time
 
-def isPrime(n,k=2,bases=[],seed=time.time()):
+def fermat(n,k=2,bases=[],seed=time.time()):
 	if(n&1==0): return (n==2)
 	random.seed(seed)
 	if(bases==[]): # if bases not given, use random 'a'
@@ -43,4 +43,4 @@ if __name__ == "__main__":
 		k = int(sys.argv[2]) # amount of bases to test against
 	n = int(sys.argv[1]) # number to test for primality
 	
-	print isPrime(int(sys.argv[1]),k)
+	print fermat(int(sys.argv[1]),k)
