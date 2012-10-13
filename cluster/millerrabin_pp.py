@@ -17,6 +17,11 @@ def batch(start,end,k=2,bases=[]):
 			if(millerrabin(n,bases=bases)): primesFound+=1
 	return primesFound
 
+if len(sys.argv) < 4:
+	print "Not enough arguments supplied. Correct usage is:"
+	print "millerrabin_pp.py start-number end-number number-of-bases"
+	exit(1)
+
 ppservers = ()
 
 job_server = pp.Server(ppservers=ppservers) # uses num. of processors in system
