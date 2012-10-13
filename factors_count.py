@@ -5,8 +5,9 @@
 
 from factorize import factorize
 
-def tau(n):
-	pfactors = factorize(n)
+def factors_count(n,pfactors=[],primes=[2]):
+	if(pfactors == []):
+		pfactors = factorize(n,primes)
 	product = 1
 	for i in pfactors.keys():
 		product *= pfactors[i]+1
