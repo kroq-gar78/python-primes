@@ -8,7 +8,7 @@ import math
 def trialdiv(n,primes=[2]):
 	if(n&1==0): return (n==2)
 	for i in primes:
-		if(n%i==0): return False
+		if(n%i==0): return (n==i)
 	for i in xrange(primes[len(primes)-1],int(math.sqrt(n))+1):
 		ifprime = True
 		for j in primes:
