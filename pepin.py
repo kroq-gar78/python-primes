@@ -3,8 +3,6 @@
 # Pepin's Primality Test for Fermat numbers
 # Created by Aditya Vaidya <kroq.gar78@gmail.com>
 
-import math
-
 def pepin(n):
 	if n==3: return True
 	return pow(3,(n-1)>>1,n)==n-1
