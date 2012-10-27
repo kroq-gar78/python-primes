@@ -6,7 +6,7 @@ import random
 import time
 
 def millerrabin(n,k=2,bases=[],seed=time.time()):
-	if(n&1==0): return (n==2)
+	if(n&1==0 || n<2): return (n==2)
 	random.seed(time.time())
 	s=0
 	d=n-1

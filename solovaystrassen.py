@@ -7,7 +7,7 @@ import random
 import time
 
 def solovaystrassen(n,k=2,bases=[],seed=time.time()):
-	if(n&1==0): return (n==2)
+	if(n&1==0 || n<2): return (n==2)
 	random.seed(time.time())
 	if(bases==[]): # if bases not given, use random 'a'
 		for i in range(k):
