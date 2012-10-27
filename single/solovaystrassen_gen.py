@@ -3,8 +3,6 @@
 # Find all primes in the given range using the Solovay-Strassen Primality Test
 
 import sys
-from euclidean import gcd
-from jacobi import jacobi
 from solovaystrassen import solovaystrassen
 from writeresults import writeresults
 

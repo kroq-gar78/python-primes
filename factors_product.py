@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import math
 from factors_count import tau
 
 def factors_product(n):

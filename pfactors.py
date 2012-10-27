@@ -4,7 +4,6 @@
 # their exponents, too.
 # Created by Aditya Vaidya <kroq.gar78@gmail.com>
 
-import math
 from trialdiv import trialdiv as isPrime
 
 def pfactors(n,primes=[2]):

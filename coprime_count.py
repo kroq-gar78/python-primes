@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 from factorize import factorize
-from pfactors import pfactors
-import math
 
 def coprime_count(n,factors=[],primes=[2]):
 	if factors == []:
