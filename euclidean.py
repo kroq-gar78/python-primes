@@ -11,5 +11,5 @@ def gcd(a,b):
 
 if __name__ == "__main__":
 	import sys
-	print str(gcd(int(sys.argv[1]),int(sys.argv[2])))
+	print gcd(int(sys.argv[1]),int(sys.argv[2]))
 
